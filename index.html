@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Она отвечает, соглашается на встречу и возвращается за второй ночью. 15 ошибок, из-за которых этого не происходит, и что делать вместо каждой.">
+  <title>Она отвечает, соглашается и возвращается · Yulov University</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#090b0c;--panel:#111719;--paper:#f0efe9;--muted:#9ba3a2;--yellow:#ffd43b;--red:#e53d36;--line:rgba(240,239,233,.16);--display:"Unbounded",Arial,sans-serif;--body:"Manrope",Arial,sans-serif;--mono:"Space Mono",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:78px}a{color:inherit;text-decoration:none}img,video{display:block;max-width:100%}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display);line-height:1.06;letter-spacing:-.05em}h2{font-size:clamp(1.95rem,4.4vw,4rem)}::selection{background:var(--yellow);color:var(--ink)}:focus-visible{outline:2px solid var(--yellow);outline-offset:5px}
+    .shell{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+    .narrow{width:min(880px,calc(100% - 48px));margin-inline:auto}
+    .eyebrow{margin-bottom:16px;color:var(--yellow);font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    .button{min-height:62px;display:inline-flex;align-items:center;justify-content:center;gap:14px;border:1px solid var(--yellow);padding:16px 30px;background:var(--yellow);color:var(--ink);font-size:.92rem;font-weight:800;text-align:center;transition:transform .2s,background .2s}
+    .button:hover{background:#ffe36c;transform:translateY(-2px)}
+    .button.wide{width:100%}
+    .button.ghost{background:transparent;color:var(--paper);border-color:rgba(240,239,233,.4)}
+    .button.ghost:hover{background:rgba(255,255,255,.06);border-color:var(--paper)}
+    .cta-note{margin:14px 0 0;color:#8d9593;font-size:.78rem}
+    .cta-block{margin-top:44px}
+    section{border-bottom:1px solid var(--line)}
+
+    /* header */
+    .header{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand-mark{width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(240,239,233,.5);color:var(--yellow);font-family:Georgia,serif;font-size:1.1rem}
+    .brand-name{font-family:var(--display);font-size:.58rem;font-weight:600;line-height:1.35;letter-spacing:.11em}
+    .header span.age{color:#7f8885;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em}
+
+    /* hero */
+    .hero{position:relative;overflow:hidden;padding:56px 0 78px}
+    .hero:before{position:absolute;inset:0;content:"";background:radial-gradient(circle at 80% 10%,rgba(229,61,54,.18),transparent 30%)}
+    .hero-copy{position:relative;z-index:1;max-width:940px}
+    .hero h1{max-width:1000px;margin-bottom:0;font-size:clamp(2.05rem,4.4vw,4.2rem)}
+    .hero h1 em{color:var(--yellow);font-style:normal}
+    .hero-kicker{max-width:720px;margin-bottom:14px;font-family:var(--display);font-size:clamp(1.05rem,1.9vw,1.5rem);font-weight:500;letter-spacing:-.03em;color:#cdd3d0}
+    .hero-lead{max-width:720px;color:#bcc3c0;font-size:clamp(1.02rem,1.6vw,1.22rem)}
+    .player{position:relative;z-index:1;margin-top:42px;border:1px solid rgba(240,239,233,.3);background:#0d1112;box-shadow:16px 16px 0 var(--yellow)}
+    .player-screen{aspect-ratio:16/9;min-height:300px;position:relative;overflow:hidden;background:#000}
+    .player-screen:before{display:none}
+    .player-meta{position:absolute;top:20px;right:22px;left:22px;z-index:1;display:flex;justify-content:space-between;color:#a8b0ad;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;pointer-events:none}
+    .main-video{width:100%;height:100%;object-fit:contain}
+    .player-cap{margin:0;padding:13px 26px;color:#a5ada9;font-size:.8rem;text-align:center}
+    .video-bullets{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:26px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+    .video-bullets li{display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start;border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:16px 18px 16px 0;font-size:.86rem;color:#c3c9c6}
+    .video-bullets li:last-child{border-right:0}
+    .video-bullets i{color:var(--yellow);font-family:var(--mono);font-size:.68rem;font-style:normal;padding-top:3px}
+    .hero-actions{position:relative;z-index:1;margin-top:34px;max-width:660px}
+    .hero-actions .button{width:100%}
+
+    /* scenes */
+    .scenes{padding:100px 0;background:#0d1112}
+    .scenes h2{max-width:820px;margin-bottom:46px}
+    .scene-list{border-top:1px solid var(--line)}
+    .scene-list li{display:grid;grid-template-columns:58px 1fr;gap:18px;align-items:start;border-bottom:1px solid var(--line);padding:22px 0;list-style:none;font-size:1rem}
+    .scene-list{margin:0;padding:0}
+    .scene-list span{color:var(--yellow);font-family:var(--mono);font-size:.8rem;padding-top:4px}
+    .scene-after{max-width:640px;margin:38px 0 0;color:#a3aaa7;font-size:.95rem}
+
+    /* mechanism */
+    .mech{padding:110px 0}
+    .mech h2{max-width:840px;margin-bottom:30px}
+    .mech h2 em{color:var(--yellow);font-style:normal}
+    .mech p{max-width:700px;color:#b3bab7;font-size:1.02rem}
+    .mech-quote{max-width:700px;margin-top:34px;border-left:2px solid var(--yellow);padding:10px 0 10px 26px;color:var(--paper);font-size:1.15rem;font-weight:700}
+
+    /* text version */
+    .textver{padding:100px 0;background:#0d1112}
+    .textver-top{max-width:820px;margin-bottom:46px}
+    .textver-top h2{margin-bottom:16px;font-size:clamp(1.7rem,3.4vw,3.1rem)}
+    .textver-top p{max-width:620px;margin:0;color:#9ca4a1;font-size:.95rem}
+    .textver-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .textver-grid>div{border-top:1px solid var(--yellow);padding-top:20px}
+    .textver-grid b{display:block;margin-bottom:14px;color:var(--yellow);font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase}
+    .textver-grid ol{margin:0;padding-left:20px;color:#b3bab7;font-size:.9rem}
+    .textver-grid li{padding:7px 0;border-bottom:1px solid rgba(240,239,233,.08)}
+    .textver-grid li::marker{color:var(--yellow);font-family:var(--mono);font-size:.78rem}
+
+    /* inside */
+    .inside{padding:110px 0;background:#101516}
+    .inside-top{max-width:820px;margin-bottom:52px}
+    .inside-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .inside-grid article{border:1px solid var(--line);background:#0d1112;padding:26px}
+    .inside-grid b{display:block;margin-bottom:10px;color:var(--yellow);font-family:var(--mono);font-size:.66rem;letter-spacing:.08em}
+    .inside-grid h3{margin:0 0 10px;font-size:1.18rem}
+    .inside-grid p{margin:0;color:#9ca19f;font-size:.88rem}
+    .inside-line{max-width:660px;margin:44px 0 0;font-size:1.05rem;font-weight:700}
+
+    /* guides */
+    .guides{padding:110px 0}
+    .guides-top{display:flex;align-items:end;justify-content:space-between;gap:44px;margin-bottom:52px}
+    .guides-top h2{max-width:680px;margin:0}
+    .guides-top p{max-width:380px;margin:0;color:#a3aaa7;font-size:.92rem}
+    .guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .guide-card{position:relative;overflow:hidden;border:1px solid var(--line);background:#0d1112;padding:24px}
+    .guide-card>span{display:block;color:var(--yellow);font-family:var(--mono);font-size:.65rem}
+    .guide-index{position:absolute;right:20px;top:17px;color:rgba(240,239,233,.18);font-family:var(--display);font-size:2.2rem;line-height:1}
+    .guide-video{height:290px;position:relative;margin:22px 0 22px;overflow:hidden;background:#161b1c}
+    .guide-video:after{position:absolute;right:12px;bottom:12px;z-index:1;content:"ВИДЕО-ОБЗОР";padding:5px 7px;background:rgba(9,11,12,.82);color:var(--yellow);font-family:var(--mono);font-size:.54rem;letter-spacing:.07em}
+    .guide-video video{width:100%;height:100%;object-fit:cover;background:#161b1c}
+    .guide-card h3{margin:0 0 8px;font-size:1.5rem}
+    .guide-card p{max-width:520px;margin:0;color:#9ca19f;font-size:.86rem}
+    .guide-card b.tag{display:block;margin-top:20px;color:#eff0ea;font-size:.74rem}
+
+    /* author */
+    .author{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center;padding:110px 0}
+    .author-photo{position:relative;margin:0;border:1px solid var(--line);padding:10px;background:#0f1314}
+    .author-photo:after{position:absolute;inset:24px -18px -18px 24px;z-index:-1;border:1px solid var(--yellow);content:""}
+    .author-photo img{width:100%;height:500px;object-fit:cover;object-position:center 38%}
+    .author-photo figcaption{position:absolute;right:-20px;bottom:24px;border-left:4px solid var(--yellow);padding:13px 16px;background:var(--ink)}
+    .author-photo strong{display:block;color:var(--yellow);font-family:var(--display);font-size:1.8rem;line-height:1}
+    .author-photo figcaption span{color:#aab1ae;font-size:.64rem;text-transform:uppercase}
+    .author-copy p{max-width:600px;color:#a9b0ad}
+    .author-quote{margin-top:36px;border-left:1px solid var(--yellow);padding:8px 0 8px 24px;font-size:1.06rem;font-weight:700}
+
+    /* reviews */
+    .reviews{padding:110px 0;background:#0d1112}
+    .reviews h2{max-width:880px;margin-bottom:18px}
+    .reviews-copy{max-width:920px;margin-bottom:48px}
+    .reviews-copy p{max-width:650px;margin:0;color:#9ca4a1}
+    .case-stat{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;color:var(--yellow);font-family:var(--display);font-size:clamp(3.2rem,8vw,7.5rem);line-height:.88;letter-spacing:-.1em}
+    .case-stat small{max-width:180px;color:#d7dcda;font-family:var(--body);font-size:.82rem;font-weight:700;letter-spacing:0;line-height:1.25}
+    .proof-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;max-width:600px}
+    .proof-cards figure{margin:0;background:#151b1d;overflow:hidden}
+    .proof-cards img{width:100%;aspect-ratio:.86;object-fit:cover;object-position:top}
+    .proof-cards figcaption{padding:12px;color:#a5adaa;font-family:var(--mono);font-size:.6rem;text-transform:uppercase}
+    .case-scatter{display:grid;grid-template-columns:1.08fr .78fr 1fr;gap:16px;align-items:start;margin-top:52px}
+    .case-scatter figure{position:relative;margin:0;overflow:hidden;border:1px solid var(--line);background:#151b1d}
+    .case-scatter img{width:100%;height:230px;object-fit:cover;object-position:top}
+    .case-scatter figcaption{position:absolute;right:0;bottom:0;left:0;padding:10px 12px;background:linear-gradient(transparent,rgba(9,11,12,.9));color:#eef0ea;font-family:var(--mono);font-size:.55rem;letter-spacing:.06em;text-transform:uppercase}
+    .case-scatter figure:nth-child(1){transform:translateY(26px)}.case-scatter figure:nth-child(1) img{height:315px}.case-scatter figure:nth-child(2){transform:translateY(-10px)}.case-scatter figure:nth-child(3){transform:translateY(54px)}.case-scatter figure:nth-child(3) img{height:290px}.case-scatter figure:nth-child(4){transform:translateY(8px)}.case-scatter figure:nth-child(5){transform:translateY(40px)}.case-scatter figure:nth-child(6){transform:translateY(-28px)}
+
+    /* offer */
+    .offer{padding:110px 0;background:var(--yellow);color:var(--ink)}
+    .offer .eyebrow{color:#b62926}
+    .offer-heading{max-width:880px;margin-bottom:52px}
+    .offer-heading p{max-width:680px;margin:0;color:#4d4b3e;font-size:1.04rem}
+    .plans{display:grid;grid-template-columns:1fr 1.1fr;gap:20px;align-items:stretch}
+    .plan{display:flex;flex-direction:column;border:1px solid rgba(9,11,12,.25);background:#fffbe8;padding:34px}
+    .plan.main{background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:14px 14px 0 var(--red)}
+    .plan-label{width:fit-content;margin-bottom:26px;padding:6px 10px;background:rgba(9,11,12,.1);font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+    .plan.main .plan-label{background:var(--red);color:#fff}
+    .plan h3{margin:0 0 12px;font-size:clamp(1.6rem,2.6vw,2.4rem)}
+    .plan>p{margin:0 0 24px;font-size:.9rem;color:#4d4b3e}
+    .plan.main>p{color:#b3bab7}
+    .price{display:flex;align-items:baseline;gap:14px;margin-bottom:8px;font-family:var(--display);font-size:2.4rem;line-height:1}
+    .plan.main .price{color:var(--yellow)}
+    .price s{color:#8d8a75;font-family:var(--body);font-size:1rem;font-weight:600}
+    .plan.main .price s{color:#7f8885}
+    .price-note{margin:0 0 26px;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:#6b6857}
+    .plan.main .price-note{color:#9ba3a2}
+    .plan ul{margin:0 0 28px;padding:0;list-style:none;border-top:1px solid rgba(9,11,12,.15)}
+    .plan.main ul{border-color:var(--line)}
+    .plan li{display:grid;grid-template-columns:26px 1fr;gap:10px;border-bottom:1px solid rgba(9,11,12,.15);padding:13px 0;font-size:.86rem}
+    .plan.main li{border-color:var(--line)}
+    .plan li i{color:#b62926;font-style:normal;font-family:var(--mono);font-size:.78rem}
+    .plan.main li i{color:var(--yellow)}
+    .plan .button{margin-top:auto}
+    .plan-foot{margin:14px 0 0;font-size:.74rem;color:#6b6857;text-align:center}
+    .plan.main .plan-foot{color:var(--yellow)}
+    .plan .button.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+    .plan .button.dark:hover{background:#1b2223}
+    .offer-note{max-width:760px;margin:34px 0 0;color:#514f40;font-size:.8rem}
+    .pay-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border-top:1px solid rgba(9,11,12,.3)}
+    .pay-strip div{display:flex;flex-direction:column;gap:4px;border-right:1px solid rgba(9,11,12,.18);padding:20px 20px 0 0}
+    .pay-strip div:last-child{border-right:0}
+    .pay-strip b{font-family:var(--display);font-size:.94rem;letter-spacing:-.03em}
+    .pay-strip span{color:#5d5a49;font-size:.76rem}
+
+    /* disqualification */
+    .disq{padding:100px 0;background:#0d1112}
+    .disq-top{max-width:760px;margin-bottom:44px}
+    .disq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .disq-grid article{border:1px solid var(--line);border-top:2px solid var(--red);background:#101617;padding:26px}
+    .disq-grid h3{margin:0 0 10px;font-size:1.06rem}
+    .disq-grid p{margin:0;color:#9ca4a1;font-size:.88rem}
+    .disq-after{max-width:640px;margin:38px 0 0;font-size:1.05rem;font-weight:700}
+
+    /* guarantee */
+    .guarantee{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:center;padding:96px 0}
+    .guarantee h2{margin:0;font-size:clamp(1.8rem,3.4vw,3.2rem)}
+    .guarantee p{max-width:660px;margin:0;color:#b3bab7;font-size:1.02rem}
+    .guarantee-badge{width:150px;height:150px;display:grid;place-items:center;text-align:center;border:1px solid var(--yellow);border-radius:50%;color:var(--yellow);font-family:var(--display);font-size:1rem;line-height:1.2;padding:16px}
+
+    /* faq */
+    .faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;padding:100px 0}
+    .faq h2{margin:0}
+    .faq-list{border-top:1px solid var(--line)}
+    details{border-bottom:1px solid var(--line)}
+    summary{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px;font-weight:700;cursor:pointer;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary:after{color:var(--yellow);content:"+";font-size:1.6rem;transition:transform .2s}
+    details[open] summary:after{transform:rotate(45deg)}
+    details p{max-width:700px;padding:0 32px 24px 0;color:#9fa7a4;font-size:.9rem}
+
+    /* final */
+    .final{padding:96px 0;background:var(--red);border-bottom:0}
+    .final-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:end}
+    .final h2{margin:0}
+    .final p{color:#ffe2e0}
+    .final .button{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+    .final .button:hover{background:#151b1c}
+    .ps{margin:44px 0 0;border-top:1px solid rgba(255,255,255,.28);padding-top:22px;max-width:760px;font-size:.92rem;color:#ffe2e0}
+
+    .footer{min-height:160px;display:flex;align-items:center;justify-content:space-between;gap:35px;color:#7f8885;font-size:.7rem}
+    .footer p{max-width:520px;margin:0}
+    .footer a{color:var(--paper)}
+
+    /* sticky */
+    .sticky{min-height:70px;position:fixed;right:0;bottom:0;left:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid #303638;padding:11px 20px;background:rgba(9,11,12,.96);backdrop-filter:blur(12px)}
+    .sticky span{display:flex;flex-direction:column;font-size:.76rem;line-height:1.3}
+    .sticky b{color:var(--yellow);font-size:.82rem}
+    .sticky a{min-height:46px;display:inline-flex;align-items:center;padding:10px 22px;background:var(--yellow);color:var(--ink);font-size:.8rem;font-weight:800;white-space:nowrap}
+
+    @media(max-width:980px){
+      .author,.faq,.final-grid,.guarantee{grid-template-columns:1fr;gap:40px}
+      .plans{grid-template-columns:1fr}
+      .guides-top{flex-direction:column;align-items:start;gap:20px}
+    }
+    @media(max-width:700px){
+      .shell,.narrow{width:min(100% - 28px,620px)}
+      .header{height:64px}
+      .hero{padding:40px 0 62px}
+      .hero h1{font-size:clamp(1.75rem,7.4vw,2.7rem)}
+      .player{margin-top:30px;box-shadow:9px 9px 0 var(--yellow)}
+      .player-screen{min-height:220px}
+      .player-meta{top:14px;right:14px;left:14px;font-size:.52rem}
+      .player-cap{padding:11px 14px;font-size:.68rem}
+      .video-bullets{grid-template-columns:1fr}
+      .video-bullets li{border-right:0;padding:14px 0}
+      .scenes,.mech,.textver,.inside,.guides,.author,.reviews,.offer,.disq,.faq,.final,.guarantee{padding-block:70px}
+      .disq-grid{grid-template-columns:1fr}
+      .pay-strip{grid-template-columns:1fr 1fr}
+      .pay-strip div{border-right:0;padding:16px 0 0}
+      .textver-grid{grid-template-columns:1fr;gap:30px}
+      .scene-list li{grid-template-columns:38px 1fr;gap:12px;font-size:.94rem}
+      .inside-grid,.guide-grid{grid-template-columns:1fr}
+      .guide-video{height:250px}
+      .author-photo img{height:420px}
+      .author-photo figcaption{right:auto;left:20px}
+      .plan{padding:26px 22px}
+      .proof-cards{max-width:460px}
+      .case-scatter{grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}.case-scatter figure,.case-scatter figure:nth-child(n){transform:none}.case-scatter img,.case-scatter figure:nth-child(n) img{height:220px}
+      .footer{min-height:200px;flex-direction:column;align-items:flex-start;justify-content:center}
+      .sticky span{font-size:.68rem}
+      .sticky b{font-size:.74rem}
+      .sticky a{padding:10px 16px;font-size:.72rem}
+    }
+    @media(max-width:420px){
+      .hero h1{font-size:2.05rem}
+      .proof-cards{grid-template-columns:1fr}
+      .proof-cards figure:nth-child(2){display:none}
+      .guide-video{height:210px}
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header class="header shell">
+    <a class="brand" href="#top" aria-label="Yulov University"><span class="brand-mark">Y·U</span><span class="brand-name">YULOV<br>UNIVERSITY</span></a>
+    <span class="age">18+</span>
+  </header>
+
+  <!-- 1. HERO + VSL -->
+  <section class="hero" id="top"><div class="shell">
+    <div class="hero-copy">
+      <p class="eyebrow">Видео 18+ для мужчин, которые хотят выбирать сами</p>
+      <p class="hero-kicker">Посмотришь это видео до конца:</p>
+      <h1>разберёшь 15 ошибок в коммуникации и узнаешь, как <em>трахаться с лучшими женщинами.</em></h1>
+    </div>
+
+    <div class="player" id="vsl" aria-label="Главный видеоурок">
+      <div class="player-screen">
+        <div class="player-meta"><span>15 ОШИБОК · РАЗБОР</span><span>14 МИНУТ · СО ЗВУКОМ</span></div>
+        <video class="main-video" controls playsinline preload="metadata"><source src="https://yulovuniversity.getcourse.ru/pl/fileservice/user/file/download/h/0aba392fcdd20ae18d14e4997cf945a3.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video>
+      </div>
+      <p class="player-cap">Включай со звуком и считай, сколько ошибок из пятнадцати ты допускаешь прямо сейчас.</p>
+    </div>
+
+    <ul class="video-bullets">
+      <li><i>01</i>На каком по счёту сообщении интерес падает и что писать в этот момент</li>
+      <li><i>02</i>Почему двухнедельная переписка убивает встречу и как звать, чтобы соглашались</li>
+      <li><i>03</i>От чего у неё зависит вторая ночь и почему она пишет первой сама</li>
+    </ul>
+
+    <div class="hero-actions">
+      <a class="button wide" href="#offer">Забрать шпаргалку от 2 000 ₽ <span>↓</span></a>
+      <p class="cta-note">Комплект из четырёх: 6 000 ₽ вместо 8 000, экономия 2 000 ₽. Ссылка на файлы приходит на почту за 2 минуты.</p>
+    </div>
+
+  </div></section>
+
+  <!-- 4. ЧТО ВНУТРИ -->
+  <section class="inside"><div class="shell">
+    <div class="inside-top">
+      <p class="eyebrow">Что это такое</p>
+      <h2>Файл, который открываешь с телефона перед тем, как написать</h2>
+    </div>
+    <div class="inside-grid">
+      <article><b>01 / ФОРМУЛИРОВКИ</b><h3>Готовые фразы под ситуацию</h3><p>Первое сообщение. Ответ на сухое «ок». Возврат диалога после трёх дней тишины. Приглашение на встречу без «может, как-нибудь кофе».</p></article>
+      <article><b>02 / РАЗБОРЫ</b><h3>Реальные переписки построчно</h3><p>Видно, на какой строке интерес рос, а на какой упал. И что стоило написать вместо этого.</p></article>
+      <article><b>03 / КАРТА</b><h3>Где ты сейчас и какой шаг следующий</h3><p>Диалог разложен по этапам. Смотришь свою переписку и сразу понимаешь, на каком ты этапе и что делать дальше.</p></article>
+      <article><b>04 / ЧЕК-ЛИСТ</b><h3>Перед встречей и на встрече</h3><p>Что сделать за час до. О чём говорить в первые десять минут. Как закончить вечер так, чтобы была вторая встреча.</p></article>
+      <article><b>05 / ОТКАЗЫ</b><h3>Что делать с холодным ответом</h3><p>Как реагировать на «мне сейчас не до отношений», чтобы сохранить контакт и вернуться к нему позже.</p></article>
+      <article><b>06 / ФОРМАТ</b><h3>PDF, читается за вечер</h3><p>Без воды и теории про энергетику. Открыл, нашёл свою ситуацию, применил в ближайшем диалоге.</p></article>
+    </div>
+    <p class="inside-line">Читается за вечер, работает уже в ближайшем диалоге.</p>
+  </div></section>
+
+  <!-- 5. ДЕМО ШПАРГАЛОК -->
+  <section class="guides" id="guides"><div class="shell">
+    <div class="guides-top">
+      <div><p class="eyebrow">Четыре темы</p><h2>Посмотри, как шпаргалки выглядят внутри</h2></div>
+      <p>Выбирай ту, где у тебя проседает прямо сейчас. Или бери всё, если проседает везде.</p>
+    </div>
+    <div class="guide-grid">
+      <article class="guide-card"><span>ШПАРГАЛКА / 01</span><b class="guide-index">01</b>
+        <div class="guide-video"><video autoplay muted loop playsinline preload="auto" poster="./assets/previews/perepiska.jpeg" aria-label="Видеофрагмент шпаргалки по переписке"><source src="./assets/videos/perepiska.mp4" type="video/mp4"></video></div>
+        <h3>Переписка</h3><p>Первое сообщение, темп диалога, флирт и приглашение на встречу так, чтобы она согласилась.</p><b class="tag">От сообщения до встречи</b></article>
+      <article class="guide-card"><span>ШПАРГАЛКА / 02</span><b class="guide-index">02</b>
+        <div class="guide-video"><video autoplay muted loop playsinline preload="auto" poster="./assets/previews/svidaniya.jpeg" aria-label="Видеофрагмент шпаргалки по свиданиям"><source src="./assets/videos/svidaniya.mp4" type="video/mp4"></video></div>
+        <h3>Свидания</h3><p>Подготовка, первые минуты, о чём говорить и как перейти к следующему шагу вместо разъезда по домам.</p><b class="tag">Без режима собеседования</b></article>
+      <article class="guide-card"><span>ШПАРГАЛКА / 03</span><b class="guide-index">03</b>
+        <div class="guide-video"><video autoplay muted loop playsinline preload="auto" poster="./assets/previews/soblaznenie.jpeg" aria-label="Видеофрагмент шпаргалки по соблазнению"><source src="./assets/videos/soblaznenie.mp4" type="video/mp4"></video></div>
+        <h3>Соблазнение</h3><p>Флирт, инициатива и умение обозначить интерес прямо, оставляя ей право отказаться.</p><b class="tag">Ясность вместо намёков</b></article>
+      <article class="guide-card"><span>ШПАРГАЛКА / 04</span><b class="guide-index">04</b>
+        <div class="guide-video"><video autoplay muted loop playsinline preload="auto" poster="./assets/previews/seks.jpeg" aria-label="Видеофрагмент шпаргалки по сексу"><source src="./assets/videos/seks.mp4" type="video/mp4"></video></div>
+        <h3>Секс</h3><p>Разговор о желаниях, согласие, реакции партнёрши и то, из-за чего она хочет вторую ночь.</p><b class="tag">Только для взрослых 18+</b></article>
+    </div>
+    <div class="cta-block"><a class="button" href="#offer">Забрать комплект за 6 000 ₽ вместо 8 000 <span>↓</span></a><p class="cta-note">Или одну тему за 2 000 ₽. Файлы на почте через 2 минуты.</p></div>
+  </div></section>
+
+  <!-- 6. АВТОР -->
+  <section class="author shell">
+    <figure class="author-photo">
+      <img src="./assets/maxim-yulov.png" alt="Максим Юлов">
+      <figcaption><strong>3 000+</strong><span>мужчин прошли систему</span></figcaption>
+    </figure>
+    <div class="author-copy">
+      <p class="eyebrow">Кто это собрал</p>
+      <h2>Максим Юлов</h2>
+      <p>Восемь лет я разбираю переписки и свидания живых людей. Всё, что попало в шпаргалки, собрано из того, что сработало у моих учеников: конкретные фразы, ситуации и шаги, которые можно применить сегодня вечером.</p>
+      <p>Через мои материалы прошли больше трёх тысяч мужчин. Обычные парни от 20 до 45: айтишники, водители, предприниматели, женатые и разведённые.</p>
+      <div class="author-quote">«Уверенность появляется тогда, когда ты знаешь свой следующий шаг. Всё остальное следствие».</div>
+    </div>
+  </section>
+
+  <!-- 7. ОТЗЫВЫ -->
+  <!-- ЗАМЕНИТЬ имена, возраст, города и результаты на реальные из базы отзывов -->
+  <section class="reviews" id="reviews"><div class="shell">
+    <div class="reviews-copy">
+      <p class="eyebrow">Система в действии</p>
+      <div class="case-stat">3 000+ <small>мужчин прошли через систему Yulov University</small></div>
+      <h2>Не теория из интернета. Тысячи мужчин уже разобрали свои ситуации по шагам.</h2>
+      <p>Ниже — часть обратной связи: диалоги, встречи, уверенность в инициативе и понимание следующего шага. У каждого свой контекст, но система помогает перестать действовать наугад.</p>
+    </div>
+
+    <div class="case-scatter" aria-label="Подборка отзывов участников">
+      <figure><img src="./assets/cases/case-01.jpg" alt="Отзыв участника системы"><figcaption>Кейс участника · обратная связь</figcaption></figure>
+      <figure><img src="./assets/cases/case-02.jpg" alt="Отзыв участника системы"><figcaption>Кейс участника · результат</figcaption></figure>
+      <figure><img src="./assets/cases/case-03.jpg" alt="Отзыв участника системы"><figcaption>Кейс участника · переписка</figcaption></figure>
+      <figure><img src="./assets/cases/case-04.jpg" alt="Отзыв участника системы"><figcaption>Кейс участника · встреча</figcaption></figure>
+      <figure><img src="./assets/cases/case-05.jpg" alt="Отзыв участника системы"><figcaption>Кейс участника · практика</figcaption></figure>
+      <figure><img src="./assets/cases/case-06.jpg" alt="Отзыв участника системы"><figcaption>Кейс участника · отзыв</figcaption></figure>
+    </div>
+
+    <div class="cta-block"><a class="button" href="#offer">Забрать комплект за 6 000 ₽ вместо 8 000 <span>↓</span></a><p class="cta-note">Или одну тему за 2 000 ₽. Файлы на почте через 2 минуты.</p></div>
+  </div></section>
+
+  <!-- 8. ОФФЕР -->
+  <section class="offer" id="offer"><div class="shell">
+    <div class="offer-heading">
+      <p class="eyebrow">Доступ</p>
+      <h2>Одна тема за 2 000 ₽ или все четыре за 6 000 ₽</h2>
+      <p>По отдельности четыре шпаргалки стоят 8 000 ₽. В комплекте 6 000 ₽, экономия 2 000 ₽.</p>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <span class="plan-label">Одна шпаргалка</span>
+        <h3>Одна тема</h3>
+        <p>Выбираешь ту, где проседает сейчас.</p>
+        <div class="price">2 000 ₽</div>
+        <p class="price-note">разовый платёж</p>
+        <ul>
+          <li><i>01</i>Одна шпаргалка на выбор из четырёх</li>
+          <li><i>02</i>Формулировки, разборы и чек-листы по теме</li>
+          <li><i>03</i>Доступ навсегда</li>
+          <li><i>04</i>Возврат в течение 7 дней</li>
+        </ul>
+        <a class="button dark wide" href="https://yulovuniversity.tilda.ws/shpargalki" target="_blank" rel="noopener">Выбрать тему за 2 000 ₽</a>
+        <p class="plan-foot">Четыре темы по отдельности выйдут в 8 000 ₽</p>
+      </div>
+
+      <div class="plan main">
+        <span class="plan-label">Экономия 2 000 ₽</span>
+        <h3>Комплект из 4 шпаргалок</h3>
+        <p>Переписка, свидания, соблазнение, секс. Весь путь целиком.</p>
+        <div class="price">6 000 ₽ <s>8 000 ₽</s></div>
+        <p class="price-note">разовый платёж · экономия 2 000 ₽ · 1 500 ₽ за тему</p>
+        <ul>
+          <li><i>01</i>Переписка: от первого сообщения до встречи</li>
+          <li><i>02</i>Свидания: подготовка, разговор, следующий шаг</li>
+          <li><i>03</i>Соблазнение: флирт и прямая инициатива</li>
+          <li><i>04</i>Секс: желания, согласие, качество близости</li>
+          <li><i>05</i>Доступ навсегда и возврат в течение 7 дней</li>
+        </ul>
+        <a class="button wide" href="https://yulovuniversity.tilda.ws/shpargalki" target="_blank" rel="noopener">Забрать все 4 за 6 000 ₽ <span>→</span></a>
+        <p class="plan-foot">Экономишь 2 000 ₽ и закрываешь все четыре этапа сразу</p>
+      </div>
+    </div>
+    <div class="pay-strip">
+      <div><b>2 минуты</b><span>ссылка на файлы приходит на почту</span></div>
+      <div><b>Карта РФ и зарубежная</b><span>оплата в один шаг</span></div>
+      <div><b>Навсегда</b><span>файлы остаются у тебя</span></div>
+      <div><b>7 дней</b><span>полный возврат по одному сообщению</span></div>
+    </div>
+  </div></section>
+
+  <!-- 9. ГАРАНТИЯ -->
+  <section class="guarantee shell">
+    <div class="guarantee-badge">7 дней<br>на возврат</div>
+    <div>
+      <p class="eyebrow">Риск на мне</p>
+      <h2>Открой, прочитай, попробуй на одном диалоге</h2>
+      <p>Если решишь, что это тебе не подходит, напиши в поддержку в течение семи дней. Деньги вернём полностью, без объяснений и уточняющих вопросов.</p>
+    </div>
+  </section>
+
+  <!-- 9.5 КОМУ НЕ СТОИТ -->
+  <section class="disq"><div class="shell">
+    <div class="disq-top">
+      <p class="eyebrow">Честно</p>
+      <h2>Кому не стоит брать</h2>
+    </div>
+    <div class="disq-grid">
+      <article><h3>Ищешь фразу-пароль</h3><p>Волшебной строчки, после которой соглашается любая, здесь нет. Есть маршрут, по которому надо идти самому.</p></article>
+      <article><h3>Прочитаешь и отложишь</h3><p>Шпаргалка работает в живом диалоге. В закладках она не даёт ничего, и 2 000 ₽ уйдут впустую.</p></article>
+      <article><h3>Хочешь продавить</h3><p>Всё построено на взаимном интересе. Отказ здесь остаётся отказом, и обходить его я не учу.</p></article>
+    </div>
+    <p class="disq-after">Если это не про тебя, забирай и открывай сегодня вечером.</p>
+    <div class="cta-block"><a class="button" href="#offer">Забрать комплект за 6 000 ₽ вместо 8 000 <span>↑</span></a><p class="cta-note">Или одну тему за 2 000 ₽. Файлы на почте через 2 минуты.</p></div>
+  </div></section>
+
+  <!-- 10. FAQ -->
+  <section class="faq shell">
+    <div><p class="eyebrow">Вопросы</p><h2>Коротко о важном</h2></div>
+    <div class="faq-list">
+      <details><summary>Это очередной пикап с подкатами?</summary><p>Заготовленных подкатов из нулевых тут нет. Основа это темп диалога, инициатива и понимание, в какой момент делать следующий шаг. Фразы даются как каркас, который ты подставляешь под свою манеру речи.</p></details>
+      <details><summary>Мне 38, я не тусовщик. Сработает?</summary><p>Материал построен вокруг обычных ситуаций: приложения знакомств, коллеги, знакомые знакомых, спортзал. Возраст роли не играет, средний участник как раз от 28 до 45.</p></details>
+      <details><summary>Сколько времени займёт?</summary><p>Одну шпаргалку читаешь за вечер. Применять начинаешь в ближайшем диалоге, который уже висит у тебя в телефоне.</p></details>
+      <details><summary>Как я получу материалы?</summary><p>Ссылка приходит на почту сразу после оплаты. Файлы открываются с телефона и остаются у тебя навсегда.</p></details>
+      <details><summary>Брать одну тему или сразу комплект?</summary><p>Если проседает конкретный этап, бери одну за 2 000 ₽. Если сыпется весь путь от переписки до утра, комплект выгоднее: 6 000 ₽ против 8 000 ₽ по отдельности, экономия 2 000 ₽ и 1 500 ₽ за тему.</p></details>
+      <details><summary>Что если не подойдёт?</summary><p>Семь дней на возврат. Пишешь в поддержку, деньги возвращаются полностью.</p></details>
+      <details><summary>Это гарантия результата?</summary><p>Результат зависит от того, сколько диалогов ты реально проведёшь. Материалы дают структуру и готовые ходы, дальше нужна практика и уважение к ответу конкретного человека.</p></details>
+    </div>
+  </section>
+
+  <!-- 11. ФИНАЛ -->
+  <section class="final"><div class="shell">
+    <div class="final-grid">
+      <div>
+        <p class="eyebrow">Твой следующий ход</p>
+        <h2>Через месяц ты либо выбираешь сам, либо ждёшь ответа как сейчас.</h2>
+      </div>
+      <div>
+        <p>Одна тема 2 000 ₽. Все четыре 6 000 ₽ вместо 8 000, экономия 2 000 ₽.</p>
+        <a class="button" href="#offer">Забрать комплект и сэкономить 2 000 ₽</a>
+      </div>
+    </div>
+    <p class="ps">P.S. Досмотри видео сверху до конца, даже если ничего не купишь. К середине ты насчитаешь минимум шесть своих ошибок из пятнадцати. Дальше решай сам.</p>
+  </div></section>
+
+  <footer class="footer shell">
+    <div class="brand"><span class="brand-mark">Y·U</span><span class="brand-name">YULOV<br>UNIVERSITY</span></div>
+    <p>Индивидуальный предприниматель Юлов Максим Алексеевич<br>ИНН 560200483639 · ОГРНИП 324632700010052<br>Электронная почта: <a href="mailto:MAKS.YULOV@INBOX.RU">MAKS.YULOV@INBOX.RU</a><br><a href="https://yulovuniversity.getcourse.ru/oferta" target="_blank" rel="noopener">Договор оферты</a> · <a href="https://yulovuniversity.getcourse.ru/politika" target="_blank" rel="noopener">Политика обработки персональных данных</a><br><br>Образовательные материалы для взрослых 18+. Не являются психологической или медицинской помощью.</p>
+    <a href="#top">Наверх ↑</a>
+  </footer>
+</main>
+
+<div class="sticky">
+  <span><b>6 000 ₽ вместо 8 000</b>Комплект из 4 шпаргалок · экономия 2 000 ₽</span>
+  <a href="#offer">Забрать</a>
+</div>
+
+<script>
+  var clips = document.querySelectorAll('.guide-video video');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.play().catch(function () {}); }
+        else { entry.target.pause(); }
+      });
+    }, { threshold: .35 });
+    clips.forEach(function (clip) { observer.observe(clip); });
+  }
+</script>
+</body>
+</html>
